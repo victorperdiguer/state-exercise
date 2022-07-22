@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Using React's state hook 🪝
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was created with <code>create-react-app</code>, so, the only thing left to do before you start coding is:
 
-## Available Scripts
+```bash
+npm install
+npm start
+```
 
-In the project directory, you can run:
+## Goals 🎯
 
-### `npm start`
+You are given a <code>Switch.js</code> component that, for now, is dummy.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The goal of this exercise is to turn it into a component that will change the theme from dark to light with the click of a button, and will also keep track of how many times the theme was changed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![](result.gif)
 
-### `npm test`
+You are already given the basic code and some CSS classes to help you with the theme change.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Iteration 1: The counter
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+On the <code>Switch.js</code> component:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Use the [hook "useState"](https://reactjs.org/docs/hooks-state.html) to create a state called count. Its initial value should be 0. ⚠️ Remember to import the hook at the top of the component so that you can use it:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+import React, { useState } from 'react'
+```
 
-### `npm run eject`
+- Print the value inside of the H4 that you have, next to "times changed". Right now it should print: "Times changed: 0"
+- Create two buttons, *Light theme* and *Dark theme*
+- Create two functions: *setDarkTheme* and *setLightTheme*. For now, both functions will do the same: they should increase the counter state by 1.
+- Each button, **when clicked**, should call its own function
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
+## Iteration 2: The theme picker
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you take a closer look at what the <code>Switch.js</code> component returns, you will see that it has two classes:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```html
+<div className='switch light'>
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+One of them is is the *switch* class. That gives is it the padding, etc. That one shouldn't change.
 
-## Learn More
+The other one is the *light* class, which right now is hardcoded and sets the theme to *light*. We want to change that class to *dark* with the click of a button, so: **we want to turn that into a dynamic and chanding class**. How so?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+With ✨ useState ✨ again.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You already have the buttons and the functions to change the theme of the Switch.
 
-### Code Splitting
+- Create a new state called theme. It's initial state should be "light".
+- Inside the className attribute, change the "light" hardcoded class name for the value of theme state. 💡 *Hint: if you use { } to write the className ,you can use the string interpolator... it's plain JavaScript...😉*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<details>
+<summary>If you get really stuck with this part, check the solution</summary>
 
-### Analyzing the Bundle Size
+```js
+    <div className={`switch ${theme}`}>
+```
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+- Then, each one of the functions, setDarkTheme and setLightTheme should change the theme state to "dark" or "light"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+All done 💪🏼 🐆
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
