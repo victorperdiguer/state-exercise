@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Switch() {
+const Switch = () => {
   
   return (
     <div className="switch light">
@@ -9,3 +9,5 @@ export default function Switch() {
     </div>
   )
 }
+
+export default Switch;

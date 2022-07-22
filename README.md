@@ -52,10 +52,12 @@ With ✨ useState ✨ again.
 You already have the buttons and the functions to change the theme of the Switch.
 
 - Create a new state called theme. It's initial state should be "light".
-- Inside the className attribute, change the "light" hardcoded class name for the value of theme state. 💡 *Hint: if you use { } to write the className ,you can use the string interpolator... it's plain JavaScript...😉*
+- Inside the className attribute, change the "light" hardcoded class name for the value of the *theme* state. 
+
+💡 *Hint: if you use { } to write the className, you can use the string interpolator... it's plain JavaScript...😉*
 
 <details>
-<summary>If you get really stuck with this part, check the solution</summary>
+<summary>If you get really stuck with this part, click here to check the solution</summary>
 
 ```js
     <div className={`switch ${theme}`}>
