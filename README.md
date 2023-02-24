@@ -26,7 +26,7 @@ On the <code>Switch.js</code> component:
 - Use the [hook "useState"](https://reactjs.org/docs/hooks-state.html) to create a state called count. Its initial value should be 0. ⚠️ Remember to import the hook at the top of the component so that you can use it:
 
 ```js
-import React, { useState } from 'react'
+import { useState } from 'react'
 ```
 
 - Print the value inside of the H4 that you have, next to "times changed". Right now it should print: "Times changed: 0"
@@ -49,6 +49,8 @@ The other one is the *light* class, which right now is hardcoded and sets the th
 
 With ✨ useState ✨ again.
 
+>📝 Note: the CSS has already been written! You just need to change the classes!
+
 You already have the buttons and the functions to change the theme of the Switch.
 
 - Create a new state called theme. It's initial state should be "light".
@@ -67,7 +69,7 @@ You already have the buttons and the functions to change the theme of the Switch
 
 - Then, each one of the functions, setDarkTheme and setLightTheme should change the theme state to "dark" or "light"
 
-All done 💪🏼 🐆
+Happy console.logging ⚛️
 
 
 
